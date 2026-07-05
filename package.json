@@ -1,0 +1,32 @@
+{
+  "name": "ai-support-agent",
+  "version": "1.0.0",
+  "description": "Multi-tenant AI support agent: website widget + WhatsApp, grounded on each client's own docs. Sell it once, host it for many clients.",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "init-db": "node scripts/init-db.js",
+    "create-client": "node scripts/create-client.js",
+    "seed-demo": "node scripts/seed-demo.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.14",
+    "pdf-parse": "^1.1.1",
+    "twilio": "^5.2.2",
+    "uuid": "^9.0.1"
+  }
+}

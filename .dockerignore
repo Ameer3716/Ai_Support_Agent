@@ -1,0 +1,7 @@
+node_modules
+frontend
+data/app.db
+data/app.db-shm
+data/app.db-wal
+.git
+.env

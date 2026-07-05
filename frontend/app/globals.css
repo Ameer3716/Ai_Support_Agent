@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Base surfaces */
+  --color-bg: #F0EEE9;           /* page background — Cloud Base */
+  --color-surface: #FFFFFF;      /* cards, panels, raised surfaces */
+  --color-border: #DDD9D0;       /* hairline dividers, card borders */
+
+  /* Text */
+  --color-text: #2B2A28;         /* primary text — Ink, ~12.4:1 contrast on bg (AAA) */
+  --color-text-muted: #6B6963;   /* secondary text, captions, metadata */
+
+  /* Accent — Mist Blue */
+  --color-accent: #6E8CA0;           /* buttons, large headings, icons — 3:1 on bg, use at 18px+ or bold */
+  --color-accent-hover: #5A7689;     /* hover / active state */
+  --color-accent-text: #3F5A6E;      /* body-size links & small text — 6.25:1 on bg (AA) */
+  --color-accent-contrast: #F7F5F1;  /* text/icons placed on top of --color-accent */
+
+  /* Secondary accent — Soft Plum, use sparingly */
+  --color-accent-2: #8B6F8B;         /* badges, tags, rare highlights only — not large surfaces */
+  --color-accent-2-contrast: #F7F5F1;
+
+  /* Radius & shadow tuned for a flat, 2026-style surface (no heavy drop shadows) */
+  --radius: 10px;
+  --shadow-card: 0 1px 2px rgba(43, 42, 40, 0.06);
+}
+
+[data-theme="dark"] {
+  /* Dark mode is now manually toggled via data-theme instead of OS preference,
+     ensuring the default background remains #F0EEE9 (Cloud Base) for all users */
+  --color-bg: #1E1C1A;
+  --color-surface: #272421;
+  --color-border: #3B3833;
+
+  --color-text: #F0EEE9;
+  --color-text-muted: #A9A6A0;
+
+  --color-accent: #8FB0C4;
+  --color-accent-hover: #A7C3D4;
+  --color-accent-text: #9FC0D2;
+  --color-accent-contrast: #12181C;
+
+  --color-accent-2: #B08FB0;
+  --color-accent-2-contrast: #1C1620;
+
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius);
+  border: 2px solid var(--color-bg);
+}
+
+@layer components {
+  .card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+  }
+
+  a {
+    color: var(--color-accent-text);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .btn-primary {
+    background: var(--color-accent);
+    color: var(--color-accent-contrast);
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.6em 1.2em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .btn-primary:hover {
+    background: var(--color-accent-hover);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    border-radius: var(--radius);
+    padding: 0.6em 1.2em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .btn-secondary:hover {
+    background: var(--color-surface);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--color-accent-2);
+    color: var(--color-accent-2-contrast);
+    border-radius: 999px;
+    padding: 0.2em 0.7em;
+    font-size: 0.8em;
+    font-weight: 500;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

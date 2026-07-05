@@ -1,0 +1,23 @@
+services:
+  ai-support-agent:
+    build: .
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - FRONTEND_URL=http://localhost:3001
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        NEXT_PUBLIC_API_BASE_URL: http://localhost:3000
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+    depends_on:
+      - ai-support-agent

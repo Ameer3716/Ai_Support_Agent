@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Support Agent — Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div id="login-view">
+  <div class="login-card">
+    <span class="login-eyebrow">AI Support Agent</span>
+    <h1>Operator sign-in</h1>
+    <p>Enter the admin password to manage your clients.</p>
+    <input id="login-password" type="password" placeholder="Admin password" autofocus />
+    <button id="login-btn">Log in</button>
+    <div class="login-error" id="login-error"></div>
+  </div>
+</div>
+
+<div id="app-view" class="hidden">
+  <div id="sidebar">
+    <div id="sidebar-brand">
+      <a href="/" class="sidebar-wordmark">AI Support Agent</a>
+    </div>
+    <div id="sidebar-header">
+      <h2>Clients</h2>
+      <button id="new-client-btn">+ New</button>
+    </div>
+    <div id="client-list"></div>
+    <div id="sidebar-footer">
+      <button id="logout-btn">Log out</button>
+    </div>
+  </div>
+
+  <div id="main">
+    <div id="empty-state" class="hidden">Select a client on the left, or create a new one to get started.</div>
+    <div id="client-detail" class="hidden"></div>
+  </div>
+</div>
+
+<div id="modal-root"></div>
+<div id="toast-root"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
