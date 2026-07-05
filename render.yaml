@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: ai-support-backend
+    env: node
+    region: oregon
+    buildCommand: npm install
+    startCommand: npm run init-db && npm start
+    disk:
+      name: sqlite-data
+      mountPath: /opt/render/project/src/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      # You will need to manually set these in the Render Dashboard after deployment:
+      # - PUBLIC_BASE_URL (Your Render URL, e.g., https://ai-support-backend.onrender.com)
+      # - FRONTEND_URL (Your Vercel URL, e.g., https://ai-support-frontend.vercel.app)
+      # - ADMIN_PASSWORD
+      # - ADMIN_JWT_SECRET
+      # - GROQ_API_KEY
+      # - GEMINI_API_KEY
