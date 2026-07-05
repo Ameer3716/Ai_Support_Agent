@@ -34,7 +34,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p variants={fadeUp} className="mb-8 max-w-[480px] text-lg leading-relaxed text-text-muted">
-            An AI agent that answers your customers instantly — on your website, WhatsApp, and Instagram — using
+            An AI agent that answers your customers instantly - on your website, WhatsApp, and Instagram - using
             only what&rsquo;s actually in your own FAQs and docs. No invented answers, no waiting until 9am.
           </motion.p>
 
@@ -79,11 +79,11 @@ export default function Hero() {
 
             <div className="mb-1 text-[0.68rem] text-text-muted">09:14</div>
             <div className="mb-3 text-text/90">
-              <b className="text-text-muted">Customer —</b> Do you accept insurance?
+              <b className="text-text-muted">Customer -</b> Do you accept insurance?
             </div>
             <div className="mb-1 text-[0.68rem] text-text-muted">09:14</div>
             <div className="mb-4 text-text/90">
-              <b className="text-text-muted">Agent —</b> We accept most major dental plans — bring your card to your
+              <b className="text-text-muted">Agent -</b> We accept most major dental plans - bring your card to your
               first visit and we&rsquo;ll verify coverage.
             </div>
 

@@ -6,7 +6,7 @@ const steps = [
   {
     no: 'No.01',
     title: 'Add their docs',
-    body: 'Paste FAQ text, upload a PDF, or point it at a page — from the dashboard, or the API if you\u2019re wiring it into an automation.',
+    body: 'Paste FAQ text, upload a PDF, or point it at a page - from the dashboard, or the API if you\u2019re wiring it into an automation.',
   },
   {
     no: 'No.02',

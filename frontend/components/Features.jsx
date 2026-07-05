@@ -14,13 +14,13 @@ const items = [
     icon: MessageCircle,
     eyebrow: 'Channel',
     title: 'WhatsApp & Instagram',
-    body: 'Same brain, same answers — connected to WhatsApp via Twilio and to Instagram DMs, no extra setup per channel.',
+    body: 'Same brain, same answers - connected to WhatsApp via Twilio and to Instagram DMs, no extra setup per channel.',
   },
   {
     icon: BookOpen,
     eyebrow: 'Knowledge',
     title: "Answers from their own docs",
-    body: "Paste an FAQ, upload a PDF, or point it at a page. It only answers from what's actually there — it won't make things up.",
+    body: "Paste an FAQ, upload a PDF, or point it at a page. It only answers from what's actually there - it won't make things up.",
   },
   {
     icon: LifeBuoy,

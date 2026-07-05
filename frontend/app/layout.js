@@ -25,9 +25,9 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata = {
-  title: 'AI Support Agent — the front desk that never closes',
+  title: 'AI Support Agent - the front desk that never closes',
   description:
-    "An AI support agent that answers customers instantly on your website, WhatsApp, and Instagram — grounded only in your own docs. No invented answers.",
+    "An AI support agent that answers customers instantly on your website, WhatsApp, and Instagram - grounded only in your own docs. No invented answers.",
 };
 
 export default function RootLayout({ children }) {

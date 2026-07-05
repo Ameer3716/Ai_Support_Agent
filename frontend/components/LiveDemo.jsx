@@ -6,11 +6,11 @@ import { useDemo } from '@/components/DemoProvider';
 export default function LiveDemo() {
   const { status } = useDemo();
 
-  let copy = "This is the actual widget, not a mockup — look for the chat bubble in the bottom-right corner of this page and ask it something.";
+  let copy = "This is the actual widget, not a mockup - look for the chat bubble in the bottom-right corner of this page and ask it something.";
   if (status === 'unavailable') {
-    copy = 'The live demo isn\u2019t active on this server yet — run "npm run seed-demo" on the backend to turn it on.';
+    copy = 'The live demo isn\u2019t active on this server yet - run "npm run seed-demo" on the backend to turn it on.';
   } else if (status === 'error') {
-    copy = "Couldn't reach the server to check the demo — try the admin dashboard instead.";
+    copy = "Couldn't reach the server to check the demo - try the admin dashboard instead.";
   }
 
   return (
@@ -32,7 +32,7 @@ export default function LiveDemo() {
             </div>
             <div className="px-6 py-16 text-center">
               <p className="font-mono text-sm text-text-muted">
-                ↘ the real widget is live on this page — bottom-right corner
+                ↘ the real widget is live on this page - bottom-right corner
               </p>
             </div>
           </div>

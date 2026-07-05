@@ -39,7 +39,7 @@
   }
 
   function fmtDate(iso) {
-    if (!iso) return '—';
+    if (!iso) return '-';
     try {
       var d = new Date(iso.includes('Z') || iso.includes('+') ? iso : iso + 'Z');
       return d.toLocaleString(undefined, { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
@@ -90,7 +90,7 @@
     }).then(function (res) {
       if (res.status === 401) {
         logout();
-        throw new Error('Session expired — please log in again.');
+        throw new Error('Session expired - please log in again.');
       }
       return res.json().then(function (data) {
         if (!res.ok) throw new Error(data.error || 'Request failed');
@@ -326,7 +326,7 @@
       statBox(s.documents, 'Documents') +
       statBox(s.chunks, 'Knowledge chunks') +
       statBox(s.messagesToday, "Messages today") +
-      statBox(s.resolvedWithoutHandoffPct === null ? '—' : s.resolvedWithoutHandoffPct + '%', 'Handled without handoff') +
+      statBox(s.resolvedWithoutHandoffPct === null ? '-' : s.resolvedWithoutHandoffPct + '%', 'Handled without handoff') +
       '</div></div>' +
       '<div class="card"><h3>Quick tips</h3>' +
       '<p style="margin:0;color:#6c6a5a;font-size:13px;line-height:1.6">' +
@@ -387,7 +387,7 @@
       });
     } else if (state.activeDocForm === 'file') {
       area.innerHTML =
-        '<div class="field"><label>File (PDF, TXT, MD, CSV — max 15MB)</label><input id="doc-file" type="file" accept=".pdf,.txt,.md,.csv" /></div>' +
+        '<div class="field"><label>File (PDF, TXT, MD, CSV - max 15MB)</label><input id="doc-file" type="file" accept=".pdf,.txt,.md,.csv" /></div>' +
         '<button class="btn" id="doc-submit-file">Upload &amp; index</button>';
       document.getElementById('doc-submit-file').addEventListener('click', function () {
         var fileInput = document.getElementById('doc-file');
@@ -426,7 +426,7 @@
         var area = document.getElementById('doc-list-area');
         if (!area) return;
         if (docs.length === 0) {
-          area.innerHTML = '<div class="empty-note">No documents yet — add your first one above.</div>';
+          area.innerHTML = '<div class="empty-note">No documents yet - add your first one above.</div>';
           return;
         }
         area.innerHTML =
@@ -480,7 +480,7 @@
           '</div>' +
           '<div class="card">' +
           '<h3>Instagram DMs (via Meta)</h3>' +
-          '<p style="color:#6c6a5a;font-size:13px;margin-top:0">One shared webhook URL handles every client — register it once in your Meta App\'s dashboard, then connect this client\'s Instagram Page ID + Page Access Token under Settings.</p>' +
+          '<p style="color:#6c6a5a;font-size:13px;margin-top:0">One shared webhook URL handles every client - register it once in your Meta App\'s dashboard, then connect this client\'s Instagram Page ID + Page Access Token under Settings.</p>' +
           '<div class="snippet-box">' + escapeHtml(data.instagramWebhook) + '</div>' +
           '<div class="copy-row"><button class="btn secondary" id="copy-ig-webhook">Copy webhook URL</button></div>' +
           '</div>' +
@@ -488,7 +488,7 @@
           '<h3>Automation / API access</h3>' +
           '<p style="color:#6c6a5a;font-size:13px;margin-top:0">Use this client\'s admin secret to push knowledge-base updates from n8n, Make, or Zapier without exposing your own operator login.</p>' +
           '<div class="field"><label>Client key (public)</label><input type="text" readonly value="' + escapeHtml(data.clientKey) + '" /></div>' +
-          '<div class="field"><label>Admin secret (private — keep safe)</label><input type="text" readonly value="' + escapeHtml(data.adminSecret) + '" /></div>' +
+          '<div class="field"><label>Admin secret (private - keep safe)</label><input type="text" readonly value="' + escapeHtml(data.adminSecret) + '" /></div>' +
           '<button class="btn secondary" id="rotate-secret-btn">Rotate secret</button>' +
           '</div>';
 
@@ -611,9 +611,9 @@
           leads
             .map(function (l) {
               return (
-                '<tr><td>' + escapeHtml(l.name || '—') + '</td>' +
+                '<tr><td>' + escapeHtml(l.name || '-') + '</td>' +
                 '<td>' + escapeHtml(l.contact) + '</td>' +
-                '<td style="max-width:220px">' + escapeHtml(l.message || '—') + '</td>' +
+                '<td style="max-width:220px">' + escapeHtml(l.message || '-') + '</td>' +
                 '<td>' + escapeHtml(l.reason) + '</td>' +
                 '<td>' + fmtDate(l.created_at) + '</td>' +
                 '<td><select data-lead-status="' + l.id + '">' +
